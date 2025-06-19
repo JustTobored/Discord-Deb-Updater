@@ -1,8 +1,8 @@
 #include <iostream>
 
-int getDiscordDeb() => void;
-int runResponseChecks(char &response) => void;
-int vencordInstall(std::string &response) => void;
+void getDiscordDeb();
+void runResponseChecks(char response);
+void vencordInstall(std::string &response);
 
 int main() {
   std::cout << "Discord Updater (online)" << '\n';
@@ -23,7 +23,7 @@ int main() {
 }
 
 
-int getDiscordDeb() {
+void getDiscordDeb() {
 
   std::cout << '\n' << "If wget is not installed this will not work";
   std::system("cd ~/Downloads && mkdir DISAUTOUP");
@@ -36,16 +36,13 @@ int getDiscordDeb() {
   std::cout << '\n';
   std::cout << "Finished Installing latest discord .deb!";
   
-  return 0;
 }
 
-int runResponseChecks(char response) {
+void runResponseChecks(char response) {
 
   if(response == 'y') {
     getDiscordDeb();
   } else {
     std::cout << '\n' << "No updates installed.";
   }
-
-  return 0;
 }
